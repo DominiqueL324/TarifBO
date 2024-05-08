@@ -90,6 +90,8 @@ class TarifApi(APIView):
         com.taux_meuble = data["taux_meuble"]
         com.nature_bien = data["nature_bien"]
         com.client_id = data["client_id"]
+        com.ref_client = data["ref_client"]
+        com.nature_bien_text = data["nature_bien_text"]
         com.save()
         all_comments = Tarifs.objects.all()[Tarifs.objects.all().__len__()-1]
         serializer = TarifSerializer(Tarifs.objects.filter(pk=all_comments.id),many=True)
@@ -202,6 +204,8 @@ class TarifsEditeApi(APIView):
             com.taux_meuble = data["taux_meuble"]
             com.nature_bien = data["nature_bien"]
             com.client_id = data["client_id"]
+            com.ref_client = data["ref_client"]
+            com.nature_bien_text = data["nature_bien_text"]
             com.save()
             com = Tarifs.objects.filter(pk= ObjectId(id))
             serializer = TarifSerializer(com,many=True)

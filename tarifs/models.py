@@ -74,4 +74,6 @@ class Tarifs(models.Model):
     taux_meuble = models.FloatField(default=0.0)
     nature_bien = models.CharField(max_length=50,null=True)
     client_id = models.CharField(max_length=20, null=True)
+    ref_client =  models.CharField(max_length=100, null=True)
+    nature_bien_text = models.CharField(max_length=100, null=True)
 
